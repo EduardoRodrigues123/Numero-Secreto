@@ -7,11 +7,12 @@ const recognition = new SpeechRecognition();
 recognition.lang = "pt-Br"
 recognition.start()
 
-recognition.addEventListener('Result', onSpeak)
+recognition.addEventListener('result', onSpeak)
 
 function onSpeak (e){
     chute = e.results[0][0].transcript
     exibeChuteNaTela(chute)
+    verificaSeOchutepossuiumValorValida(chute)
 }
 
 function exibeChuteNaTela (chute){
